@@ -1,7 +1,4 @@
-from pathlib import Path
-
-# HTML 코드 내용 (글자와 버튼 크기를 이전보다 절반으로 조정)
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -124,10 +121,4 @@ html_content = """<!DOCTYPE html>
   <script src="script.js"></script>
 </body>
 </html>
-"""
 
-# 저장
-file_path = Path("/mnt/data/index_mobile_medium.html")
-file_path.write_text(html_content, encoding="utf-8")
-
-file_path.name
