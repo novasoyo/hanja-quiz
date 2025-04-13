@@ -1,35 +1,35 @@
 from pathlib import Path
 
-# HTML 코드 내용: 전체 폰트 3배, 버튼 크기 2배
+# HTML 코드: 텍스트와 버튼을 시각적으로 훨씬 더 키운 버전
 html_content = """<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>미강중 1-8반 올백완성</title>
   <style>
     html {
-      font-size: 48px; /* 기본 폰트 크기 3배 */
+      font-size: 62.5%; /* 1rem = 10px */
     }
     body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom, #e6f7ff, #ffffff);
       margin: 0;
-      padding: 1em;
+      padding: 2rem;
       text-align: center;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 3.2rem;
       color: #0077cc;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
     }
     #menu button {
       display: block;
-      width: 100%;
-      max-width: 600px;
-      margin: 0.7em auto;
-      padding: 1.5em;
-      font-size: 1.8rem; /* 버튼 폰트 2배 */
+      width: 90%;
+      max-width: 500px;
+      margin: 1.2rem auto;
+      padding: 2rem;
+      font-size: 2.4rem;
       border: none;
       border-radius: 16px;
       background-color: #0077cc;
@@ -42,9 +42,9 @@ html_content = """<!DOCTYPE html>
     .card, .quiz, .result {
       display: none;
       background: #fff;
-      margin: 2em auto;
-      padding: 2em;
-      border-radius: 15px;
+      margin: 3rem auto;
+      padding: 3rem;
+      border-radius: 20px;
       width: 100%;
       max-width: 700px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -55,21 +55,21 @@ html_content = """<!DOCTYPE html>
     #cardHanja,
     #quizHanja,
     #writtenHanja {
-      font-size: 2.5rem;
+      font-size: 5rem;
       font-weight: bold;
-      margin-bottom: 0.5em;
+      margin-bottom: 2rem;
     }
     #cardMeaning,
     #cardSound {
-      font-size: 1.5rem;
+      font-size: 2.8rem;
     }
     button.option {
       width: 90%;
       max-width: 600px;
-      margin: 0.6em auto;
-      padding: 1.3em;
-      font-size: 1.6rem;
-      border-radius: 10px;
+      margin: 1.2rem auto;
+      padding: 2rem;
+      font-size: 2.4rem;
+      border-radius: 12px;
       border: 1px solid #ccc;
       background-color: #f2f2f2;
       cursor: pointer;
@@ -79,16 +79,16 @@ html_content = """<!DOCTYPE html>
     }
     input[type="text"] {
       width: 90%;
-      padding: 1em;
-      font-size: 1.6rem;
+      padding: 1.6rem;
+      font-size: 2.4rem;
       border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-top: 1em;
+      border-radius: 12px;
+      margin-top: 2rem;
     }
     #multipleFeedback, #writtenFeedback {
-      margin-top: 1em;
+      margin-top: 2rem;
       font-weight: bold;
-      font-size: 1.4rem;
+      font-size: 2.4rem;
     }
   </style>
 </head>
@@ -104,7 +104,7 @@ html_content = """<!DOCTYPE html>
     <h2 id="cardHanja"></h2>
     <p><strong>뜻:</strong> <span id="cardMeaning"></span></p>
     <p><strong>음:</strong> <span id="cardSound"></span></p>
-    <button id="btnNextFlashcard">다음</button>
+    <button id="btnNextFlashcard" class="option">다음</button>
   </div>
 
   <div class="quiz" id="quizMultiple">
@@ -115,9 +115,9 @@ html_content = """<!DOCTYPE html>
 
   <div class="quiz" id="quizWritten">
     <h2 id="writtenHanja"></h2>
-    <p style="font-size: 1.4rem;">뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
+    <p style="font-size: 2.2rem;">뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
     <input type="text" id="writtenAnswer">
-    <button id="btnSubmitWritten">제출</button>
+    <button id="btnSubmitWritten" class="option">제출</button>
     <p id="writtenFeedback"></p>
   </div>
 
@@ -126,8 +126,8 @@ html_content = """<!DOCTYPE html>
 </html>
 """
 
-# 저장
-file_path = Path("/mnt/data/index_mobile_big.html")
+# 저장 경로
+file_path = Path("/mnt/data/index_mobile_largest.html")
 file_path.write_text(html_content, encoding="utf-8")
 
 file_path.name
