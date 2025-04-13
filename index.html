@@ -1,6 +1,6 @@
 from pathlib import Path
 
-# 전체 폰트를 크게 키운 HTML 내용 (2배 키움)
+# HTML 코드 내용: 전체 폰트 3배, 버튼 크기 2배
 html_content = """<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,7 +9,7 @@ html_content = """<!DOCTYPE html>
   <title>미강중 1-8반 올백완성</title>
   <style>
     html {
-      font-size: 32px; /* 전체 폰트를 약 2배로 키움 */
+      font-size: 48px; /* 기본 폰트 크기 3배 */
     }
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -26,12 +26,12 @@ html_content = """<!DOCTYPE html>
     #menu button {
       display: block;
       width: 100%;
-      max-width: 400px;
-      margin: 0.5em auto;
-      padding: 1.2em;
-      font-size: 1rem;
+      max-width: 600px;
+      margin: 0.7em auto;
+      padding: 1.5em;
+      font-size: 1.8rem; /* 버튼 폰트 2배 */
       border: none;
-      border-radius: 12px;
+      border-radius: 16px;
       background-color: #0077cc;
       color: white;
       cursor: pointer;
@@ -46,7 +46,7 @@ html_content = """<!DOCTYPE html>
       padding: 2em;
       border-radius: 15px;
       width: 100%;
-      max-width: 600px;
+      max-width: 700px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
     .visible {
@@ -55,21 +55,21 @@ html_content = """<!DOCTYPE html>
     #cardHanja,
     #quizHanja,
     #writtenHanja {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 0.5em;
     }
     #cardMeaning,
     #cardSound {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
     button.option {
       width: 90%;
-      max-width: 500px;
-      margin: 0.5em auto;
-      padding: 1em;
-      font-size: 1rem;
-      border-radius: 8px;
+      max-width: 600px;
+      margin: 0.6em auto;
+      padding: 1.3em;
+      font-size: 1.6rem;
+      border-radius: 10px;
       border: 1px solid #ccc;
       background-color: #f2f2f2;
       cursor: pointer;
@@ -80,15 +80,15 @@ html_content = """<!DOCTYPE html>
     input[type="text"] {
       width: 90%;
       padding: 1em;
-      font-size: 1rem;
+      font-size: 1.6rem;
       border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-top: 1em;
     }
     #multipleFeedback, #writtenFeedback {
       margin-top: 1em;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.4rem;
     }
   </style>
 </head>
@@ -115,7 +115,7 @@ html_content = """<!DOCTYPE html>
 
   <div class="quiz" id="quizWritten">
     <h2 id="writtenHanja"></h2>
-    <p style="font-size: 1rem;">뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
+    <p style="font-size: 1.4rem;">뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
     <input type="text" id="writtenAnswer">
     <button id="btnSubmitWritten">제출</button>
     <p id="writtenFeedback"></p>
@@ -127,7 +127,7 @@ html_content = """<!DOCTYPE html>
 """
 
 # 저장
-file_path = Path("/mnt/data/index_bigfont.html")
+file_path = Path("/mnt/data/index_mobile_big.html")
 file_path.write_text(html_content, encoding="utf-8")
 
 file_path.name
