@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>미강중 1-8반 한자완성</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #f9f7ff, #ffffff);
+      margin: 0;
+      padding: 2em;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #5513be;
+      margin-bottom: 1.5rem;
+    }
+    #menu button {
+      margin: 0.5em;
+      padding: 1em 2em;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      background-color: #9b53ff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    #menu button:hover {
+      background-color: #5b15ab;
+    }
+    .card, .quiz, .result {
+      display: none;
+      background: #fff;
+      margin: 2em auto;
+      padding: 2em;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .visible {
+      display: block;
+    }
+    button.option {
+      display: block;
+      margin: 0.5em auto;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f2f2f2;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button.option:hover {
+      background-color: #e0e0e0;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 0.7em;
+      font-size: 1.1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1em;
+    }
+    #multipleFeedback, #writtenFeedback {
+      margin-top: 1em;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>미강중 1-8반 한자 만점도전!</h1>
+  <div id="menu">
+    <button id="btnFlashcards">플래시카드 학습</button>
+    <button id="btnQuizMultiple">객관식 퀴즈</button>
+    <button id="btnQuizWritten">주관식 퀴즈</button>
+  </div>
+
+  <div class="card" id="flashcard">
+    <h2 id="cardHanja"></h2>
+    <p><strong>뜻:</strong> <span id="cardMeaning"></span></p>
+    <p><strong>음:</strong> <span id="cardSound"></span></p>
+    <button id="btnNextFlashcard">다음</button>
+  </div>
+
+  <div class="quiz" id="quizMultiple">
+    <h2 id="quizHanja"></h2>
+    <div id="quizOptions"></div>
+    <p id="multipleFeedback"></p>
+  </div>
+
+  <div class="quiz" id="quizWritten">
+    <h2 id="writtenHanja"></h2>
+    <p>뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
+    <input type="text" id="writtenAnswer">
+    <button id="btnSubmitWritten">제출</button>
+    <p id="writtenFeedback"></p>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
