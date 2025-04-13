@@ -36,24 +36,36 @@
       display: none;
       background: #fff;
       margin: 2em auto;
-      padding: 1.5em;
+      padding: 2em;
       border-radius: 15px;
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
     .visible {
       display: block;
     }
+    #cardHanja,
+    #quizHanja,
+    #writtenHanja {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    #cardMeaning,
+    #cardSound {
+      font-size: 1.5rem;
+    }
     button.option {
       width: 90%;
-      max-width: 400px;
+      max-width: 500px;
       margin: 0.5em auto;
       padding: 1em;
-      font-size: 1rem;
+      font-size: 1.4rem;
       border-radius: 8px;
       border: 1px solid #ccc;
       background-color: #f2f2f2;
+      cursor: pointer;
     }
     button.option:hover {
       background-color: #e0e0e0;
@@ -61,7 +73,7 @@
     input[type="text"] {
       width: 90%;
       padding: 1em;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       border: 1px solid #ccc;
       border-radius: 8px;
       margin-top: 1em;
@@ -69,12 +81,12 @@
     #multipleFeedback, #writtenFeedback {
       margin-top: 1em;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
   </style>
 </head>
 <body>
-  <h1>미강중 1-8반 한자 만점도전!</h1>
+  <h1>📚 미강중 1-8반 올백완성</h1>
   <div id="menu">
     <button id="btnFlashcards">플래시카드 학습</button>
     <button id="btnQuizMultiple">객관식 퀴즈</button>
@@ -96,11 +108,12 @@
 
   <div class="quiz" id="quizWritten">
     <h2 id="writtenHanja"></h2>
-    <p>뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
+    <p style="font-size: 1.2rem;">뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
     <input type="text" id="writtenAnswer">
     <button id="btnSubmitWritten">제출</button>
     <p id="writtenFeedback"></p>
   </div>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
