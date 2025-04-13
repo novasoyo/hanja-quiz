@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+# 전체 폰트를 크게 키운 HTML 내용 (2배 키움)
+html_content = """<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>미강중 1-8반 한자완성</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미강중 1-8반 올백완성</title>
   <style>
+    html {
+      font-size: 32px; /* 전체 폰트를 약 2배로 키움 */
+    }
     body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom, #e6f7ff, #ffffff);
@@ -12,7 +19,7 @@
       text-align: center;
     }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #0077cc;
       margin-bottom: 1.5rem;
     }
@@ -22,7 +29,7 @@
       max-width: 400px;
       margin: 0.5em auto;
       padding: 1.2em;
-      font-size: 1.4rem;
+      font-size: 1rem;
       border: none;
       border-radius: 12px;
       background-color: #0077cc;
@@ -48,20 +55,20 @@
     #cardHanja,
     #quizHanja,
     #writtenHanja {
-      font-size: 2.8rem;
+      font-size: 2rem;
       font-weight: bold;
       margin-bottom: 0.5em;
     }
     #cardMeaning,
     #cardSound {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     button.option {
       width: 90%;
       max-width: 500px;
       margin: 0.5em auto;
       padding: 1em;
-      font-size: 1.4rem;
+      font-size: 1rem;
       border-radius: 8px;
       border: 1px solid #ccc;
       background-color: #f2f2f2;
@@ -73,7 +80,7 @@
     input[type="text"] {
       width: 90%;
       padding: 1em;
-      font-size: 1.3rem;
+      font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 8px;
       margin-top: 1em;
@@ -81,7 +88,7 @@
     #multipleFeedback, #writtenFeedback {
       margin-top: 1em;
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
   </style>
 </head>
@@ -108,7 +115,7 @@
 
   <div class="quiz" id="quizWritten">
     <h2 id="writtenHanja"></h2>
-    <p style="font-size: 1.2rem;">뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
+    <p style="font-size: 1rem;">뜻과 음을 순서대로 적어보세요 (예: 불 화)</p>
     <input type="text" id="writtenAnswer">
     <button id="btnSubmitWritten">제출</button>
     <p id="writtenFeedback"></p>
@@ -117,3 +124,10 @@
   <script src="script.js"></script>
 </body>
 </html>
+"""
+
+# 저장
+file_path = Path("/mnt/data/index_bigfont.html")
+file_path.write_text(html_content, encoding="utf-8")
+
+file_path.name
